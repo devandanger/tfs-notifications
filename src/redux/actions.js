@@ -1,6 +1,6 @@
 import { ADD_ACCOUNT } from "./actionTypes";
 
-export const addRepo = content => ({
+export const addAccount = content => ({
     type: ADD_ACCOUNT,
     payload: {}
   });

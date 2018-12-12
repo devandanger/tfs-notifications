@@ -15,4 +15,3 @@ const repoList = (state = initialState, action) => {
 };
 
 export default repoList;
-

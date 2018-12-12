@@ -1,5 +1,5 @@
 import { combineReducers } from "redux";
 
-import repos from "./repos";
+import accounts from "./accounts";
 
-export default combineReducers({ repos });
+export default combineReducers({ accounts });
