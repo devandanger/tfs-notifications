@@ -1,1 +1,1 @@
-export const ADD_REPO = "ADD_REPO";
+export const ADD_ACCOUNT = "ADD_REPO";
