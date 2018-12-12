@@ -22,6 +22,7 @@
   "dependencies": {
     "electron-is-dev": "^0.3.0",
     "electron-publisher-s3": "^20.17.2",
+    "menubar": "^5.2.3",
     "react": "^16.4.1",
     "react-dev-utils": "^5.0.1",
     "react-dom": "^16.6.3"
