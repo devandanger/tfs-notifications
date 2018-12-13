@@ -3,7 +3,7 @@ const isDev = require('electron-is-dev');
 const { BrowserWindow, Menu } = require("electron");
 
 var menubar = require('menubar')
-var htmlToLoad = isDev ? 'http://localhost:3000/index.html' : `file://${path.join(__dirname, '../build/index.html')}`
+var htmlToLoad = isDev ? 'http://localhost:3000?main' : `file://${path.join(__dirname, '../build/index.html?main')}`
 
 
 var mb = menubar({ index: htmlToLoad })
@@ -33,7 +33,7 @@ const createSettingsWindow = () => {
   win.on('closed', () => {
     win = null
   })
-  var settingsHtmlToLoad = isDev ? 'http://localhost:3000/settingsWindow.html' : `file://${path.join(__dirname, '../build/settingsWindow.html')}`
+  var settingsHtmlToLoad = isDev ? 'http://localhost:3000?settings' : `file://${path.join(__dirname, '../build/settingsWindow.html?settings')}`
   win.loadURL(settingsHtmlToLoad)
 }
 

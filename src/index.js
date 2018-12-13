@@ -4,7 +4,7 @@ import './index.css';
 import * as serviceWorker from './serviceWorker';
 import { Provider } from "react-redux";
 import store from "./redux/store";
-import App from "./App";
+import ViewManager from './ViewManager';
 
 
 // If you want your app to work offline and load faster, you can change
@@ -15,7 +15,7 @@ serviceWorker.unregister();
 const rootElement = document.getElementById("root");
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <ViewManager />
   </Provider>,
   rootElement
 );
