@@ -1,10 +1,12 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
 import './index.css';
 import * as serviceWorker from './serviceWorker';
-import { Provider } from "react-redux";
-import store from "./redux/store";
-import ViewManager from './ViewManager';
+import Root from './Root';
+// import { Provider } from "react-redux";
+// import { createStore } from "redux";
+// import rootReducer from "./redux/reducers";
+import ViewManager from "./ViewManager"
 
 
 // If you want your app to work offline and load faster, you can change
@@ -12,10 +14,9 @@ import ViewManager from './ViewManager';
 // Learn more about service workers: http://bit.ly/CRA-PWA
 serviceWorker.unregister();
 
+//const store = createStore(rootReducer)
 const rootElement = document.getElementById("root");
-ReactDOM.render(
-  <Provider store={store}>
-    <ViewManager />
-  </Provider>,
-  rootElement
-);
+render( <ViewManager />, rootElement)
+
+
+// render(<Root store={store} />, document.getElementById("root"))

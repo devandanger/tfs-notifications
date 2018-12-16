@@ -29,7 +29,7 @@ mb.on('after-create-window', function() {
 
 const createSettingsWindow = () => {
   console.log("Create settings")
-  let win = new BrowserWindow({ width: 200, height: 100 })
+  let win = new BrowserWindow({ width: 250, height: 400 })
   win.on('closed', () => {
     win = null
   })

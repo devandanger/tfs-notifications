@@ -49,6 +49,11 @@ class Settings extends Component {
   }
 
   renderItem(title, info) {
+    // return (
+    //   <ListViewRow>
+    //     <Text color="#414141" size="13">{info}</Text>
+    //   </ListViewRow>
+    // )
     return this.props.accounts.map((account) => {
       return (
         <ListViewRow>
