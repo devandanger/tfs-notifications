@@ -3,8 +3,12 @@ import { ADD_ACCOUNT } from "../actionTypes"
 const initialState = {
   accounts: [
     {
-      authorization: "asdfsasdf",
-      project_url: "https://www.google.com"
+      project_url: "https://www.google.com",
+      authorization: "asdfsasdf"
+    },
+    {
+      project_url: "https://www.azuredevops.com",
+      authorization: "qwerqwer"
     }
   ]
 }
@@ -12,8 +16,14 @@ const initialState = {
 const accountList = (state = initialState, action) => {
   switch (action.type) {
     case ADD_ACCOUNT: {
-      state.accounts.push(action.payload)
-      return state;
+      const authorization = action.payload.authorization
+      const project_url = action.payload.project_url
+
+      if (state.accounts.some(account => account.project_url === project_url)) {
+        return state;
+      } else {
+        state.accounts.push(action.payload)
+      }
     }
     default: {
       return state;
@@ -21,4 +31,4 @@ const accountList = (state = initialState, action) => {
   }
 }
 
-export default accountList;
+export default accountList

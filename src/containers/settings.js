@@ -12,6 +12,7 @@ import {
   TextInput
 } from 'react-desktop/macOs';
 import '../styles/App.css';
+import SettingsRow from './settingsrow' 
 import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
 import { addAccount } from '../redux/actions'
@@ -33,8 +34,9 @@ class Settings extends Component {
           <TextInput onChange={this.addAccountAuthorization} placeholder="Authorization" />
           <Button onClick={ () => this.props.createAccount(this.accountProjectUrl, this.accountAuthorization)}>Add</Button>
         </ListViewHeader>
-        <ListViewSection header={this.renderSectionHeader('Repos')}>
-          {this.renderItems()}
+        <ListViewSection>
+          <ListViewSectionHeader>Repos</ListViewSectionHeader>
+          <SettingsRow />
         </ListViewSection>
         <ListViewFooter>
           <Text size="11" color="#696969">Status</Text>
@@ -44,18 +46,11 @@ class Settings extends Component {
     );
   }
 
-  renderSectionHeader(title) {
-    return (
-      <ListViewSectionHeader>
-        {title}
-      </ListViewSectionHeader>
-    );
-  }
-
   renderItems() {
     return this.props.accounts.map((account) => {
+      console.log("Show repos " + account.project_url)
       return (
-        <ListViewRow>
+        <ListViewRow key="{account.project_url}">
           <Text color="#414141" size="13">{account.project_url}</Text>
         </ListViewRow>
       )

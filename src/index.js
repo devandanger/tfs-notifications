@@ -1,11 +1,8 @@
 import React from 'react';
 import { render } from 'react-dom';
 import './index.css';
-import * as serviceWorker from './serviceWorker';
+import * as serviceWorker from './serviceWorker'
 import Root from './Root';
-// import { Provider } from "react-redux";
-// import { createStore } from "redux";
-// import rootReducer from "./redux/reducers";
 import ViewManager from "./ViewManager"
 
 
