@@ -27,13 +27,18 @@ mb.on('after-create-window', function() {
   })
 });
 
+const openDevTools = () => {
+  console.log("Opening dev tool")
+  let devWin = new BrowserWindow({ width: 400, height: 400 })
+  devWin.webContents.openDevTools()
+}
+
 const createSettingsWindow = () => {
-  console.log("Create settings")
   let win = new BrowserWindow({ width: 250, height: 400 })
   win.on('closed', () => {
     win = null
   })
-  var settingsHtmlToLoad = isDev ? 'http://localhost:3000?settings' : `file://${path.join(__dirname, '../build/settingsWindow.html?settings')}`
+  var settingsHtmlToLoad = isDev ? 'http://localhost:3000?settings' : `file://${path.join(__dirname, '../build/index.html?settings')}`
   win.loadURL(settingsHtmlToLoad)
 }
 

@@ -12,7 +12,8 @@ const initialState = {
 const accountList = (state = initialState, action) => {
   switch (action.type) {
     case ADD_ACCOUNT: {
-      return action.payload.filter;
+      state.accounts.push(action.payload)
+      return state;
     }
     default: {
       return state;
